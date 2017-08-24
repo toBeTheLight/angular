@@ -1,0 +1,14 @@
+import { Injectable } from '@angular/core'
+import { Hero } from './hero'
+import { HEROES } from './mock-heros' 
+
+@Injectable()
+export class HeroService {
+    getHeroes(): Promise<Hero[]> {
+        return new Promise(resolve => {
+            setTimeout(function() {
+                resolve(HEROES)
+            }, 2000);
+        })
+    }
+}
