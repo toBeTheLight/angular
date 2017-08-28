@@ -11,4 +11,11 @@ export class HeroService {
             }, 2000);
         })
     }
+    getHero(id: number): Promise<Hero> {
+        return new Promise(resolve => {
+            setTimeout(function () {
+                resolve(HEROES[id])
+            }, 500)
+        })
+    }
 }
