@@ -3,11 +3,11 @@ import { RouterModule } from '@angular/router'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
 
-import { HeroDetailComponent } from './hero-detail.component'
 import { AppComponent } from './app.component'
 import { HeroService　} from './hero.service'
 import { HeroesComponent } from '../pages/heroes/heroes.component'
 import { DashboardPage } from '../pages/dashboard/dashboard.component'
+import { HeroDetailComponent } from '../pages/hero-detail/hero-detail.component'
 
 const Routers = RouterModule.forRoot([
   {

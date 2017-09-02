@@ -15,7 +15,10 @@ export class DashboardPage implements OnInit{
   }
   getHeroes (): void {
     this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.splice(0, 5))
+      .then(heroes => {
+          this.heroes = heroes.slice(0, 5)
+        }
+      )
   }
   ngOnInit (): void {
     this.getHeroes()

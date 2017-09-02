@@ -23,7 +23,6 @@ export class HeroesComponent implements OnInit {
         this.heroService.getHeroes().then(heroes => this.heroes = heroes)
     }
     ngOnInit(): void {
-        console.log('heroes')
         this.getHeroes()
     }
 }

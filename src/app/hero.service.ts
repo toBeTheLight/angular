@@ -5,6 +5,7 @@ import { HEROES } from './mock-heros'
 @Injectable()
 export class HeroService {
     getHeroes(): Promise<Hero[]> {
+        console.log(HEROES.length)
         return new Promise(resolve => {
             setTimeout(function() {
                 resolve(HEROES)
