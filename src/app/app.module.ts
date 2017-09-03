@@ -1,34 +1,20 @@
 import { NgModule } from '@angular/core'
-import { RouterModule } from '@angular/router'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api'
+import { InMemoryDataService } from '../api/in-memory-data.service'
 
 import { AppComponent } from './app.component'
-import { HeroService　} from './hero.service'
 import { HeroesComponent } from '../pages/heroes/heroes.component'
 import { DashboardPage } from '../pages/dashboard/dashboard.component'
 import { HeroDetailComponent } from '../pages/hero-detail/hero-detail.component'
+import { HeroService　} from '../api/hero.service'
 
-const Routers = RouterModule.forRoot([
-  {
-    path: '',
-    redirectTo: 'heroes',
-    // full:path完全等于''才匹配
-    pathMatch: 'full',
-  },
-  {
-    path: 'heroes',
-    component: HeroesComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardPage
-  },
-  {
-    path: 'detail/:id',
-    component: HeroDetailComponent
-  }
-])
+import { AppRoutingModule } from '../route/app-routing.module'
+
+
 
 @NgModule({
   // 从属当前模块的组件、指令、管道
@@ -41,7 +27,9 @@ const Routers = RouterModule.forRoot([
   imports: [
     BrowserModule,
     FormsModule,
-    Routers
+    AppRoutingModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [
     HeroService
