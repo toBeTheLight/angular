@@ -22,6 +22,13 @@ export class HeroService {
             .then(() => hero)
             .catch(this.handleError)
     }
+    delete (id: number): Promise<void> {
+        const url = `${this.heroesUrl}/${id}`
+        return this.http.delete(url, {headers: this.headers})
+            .toPromise()
+            .then(() => null)
+            .catch(this.handleError)
+    } 
     // 英雄列表
     getHeroes (): Promise<Hero[]> {
         return this.http.get(this.heroesUrl)
@@ -41,5 +48,11 @@ export class HeroService {
                 // resolve(HEROES[id])
             // }, 500)
         // })
+    }
+    create (name: string): Promise<Hero> {
+        return this.http.post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json().data as Hero)
+        .catch(this.handleError)
     }
 }
