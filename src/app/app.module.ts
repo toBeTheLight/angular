@@ -10,6 +10,7 @@ import { AppComponent } from './app.component'
 import { HeroesComponent } from '../pages/heroes/heroes.component'
 import { DashboardPage } from '../pages/dashboard/dashboard.component'
 import { HeroDetailComponent } from '../pages/hero-detail/hero-detail.component'
+import { HeroSearchComponent } from '../pages/hero-search/hero-search.component'
 import { HeroService　} from '../api/hero.service'
 
 import { AppRoutingModule } from '../route/app-routing.module'
@@ -22,7 +23,8 @@ import { AppRoutingModule } from '../route/app-routing.module'
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardPage
+    DashboardPage,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
